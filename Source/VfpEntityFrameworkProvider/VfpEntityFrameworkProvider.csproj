@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A084227-D4CE-4341-BF69-A51A082946A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VfpEntityFrameworkProvider</RootNamespace>
+    <AssemblyName>VfpEntityFrameworkProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\VfpEntityFrameworkProvider.Setup\Resources\net40\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsContainerAnalysis>False</CodeContractsContainerAnalysis>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\VfpEntityFrameworkProvider.Setup\Resources\net40\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Resources\VfpEntityFrameworkProvider.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VfpClient, Version=0.5.1.4842, Culture=neutral, PublicKeyToken=78aaa56544ab725d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resources\VfpClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgumentUtility.cs" />
+    <Compile Include="DbExpressions\DbArrayExpression.cs" />
+    <Compile Include="DbExpressions\DbCommandTree.cs" />
+    <Compile Include="DbExpressions\DbCommandTreeKind.cs" />
+    <Compile Include="DbExpressions\DbDeleteCommandTree.cs" />
+    <Compile Include="DbExpressions\DbFunctionCommandTree.cs" />
+    <Compile Include="DbExpressions\DbInListExpression.cs" />
+    <Compile Include="DbExpressions\DbInsertCommandTree.cs" />
+    <Compile Include="DbExpressions\DbLikeCExpression.cs" />
+    <Compile Include="DbExpressions\DbModificationCommandTree.cs" />
+    <Compile Include="DbExpressions\DbParameterExpression.cs" />
+    <Compile Include="DbExpressions\DbQueryCommandTree.cs" />
+    <Compile Include="DbExpressions\DbUpdateCommandTree.cs" />
+    <Compile Include="DbExpressions\DbXmlToCursorExpression.cs" />
+    <Compile Include="DbExpressions\DbXmlToCursorPropertyExpression.cs" />
+    <Compile Include="DbExpressions\DbXmlToCursorScanExpression.cs" />
+    <Compile Include="DbProviderRegistration.cs" />
+    <Compile Include="DdlBuilder.cs" />
+    <Compile Include="Properties\SharedAssemblyInfo.cs" />
+    <Compile Include="Schema\DataTableDbcCreator.cs" />
+    <Compile Include="Schema\DataTableToTableConverter.cs" />
+    <Compile Include="Schema\DbcFilesProvider.cs" />
+    <Compile Include="Schema\FunctionReturnTableColumnsSchema.cs" />
+    <Compile Include="TableIndex.cs" />
+    <Compile Include="TableIndexService.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="VfpFunctions.cs" />
+    <Compile Include="VfpOleDb\VfpAutoIncDataReader.cs" />
+    <Compile Include="VfpConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Visitors\DbExpressionTextGenerator.cs" />
+    <Compile Include="Visitors\DmlSqlFormatter.cs" />
+    <Compile Include="Visitors\Gatherers\NullGatherer.cs" />
+    <Compile Include="Visitors\Rewriters\ApplyRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\CaseWithNullRewriter.cs" />
+    <Compile Include="Visitors\Rewriters\ComparisonRewritter.cs" />
+    <Compile Include="DbExpressions\DbAggregate.cs" />
+    <Compile Include="DbExpressions\DbAndExpression.cs" />
+    <Compile Include="DbExpressions\DbApplyExpression.cs" />
+    <Compile Include="DbExpressions\DbArithmeticExpression.cs" />
+    <Compile Include="DbExpressions\DbBinaryExpression.cs" />
+    <Compile Include="DbExpressions\DbCaseExpression.cs" />
+    <Compile Include="DbExpressions\DbCastExpression.cs" />
+    <Compile Include="DbExpressions\DbComparisonExpression.cs" />
+    <Compile Include="DbExpressions\DbConstantExpression.cs" />
+    <Compile Include="DbExpressions\DbCrossJoinExpression.cs" />
+    <Compile Include="DbExpressions\DbDerefExpression.cs" />
+    <Compile Include="DbExpressions\DbDistinctExpression.cs" />
+    <Compile Include="DbExpressions\DbElementExpression.cs" />
+    <Compile Include="DbExpressions\DbEntityRefExpression.cs" />
+    <Compile Include="DbExpressions\DbExceptExpression.cs" />
+    <Compile Include="DbExpressions\DbExpression.cs" />
+    <Compile Include="DbExpressions\DbExpressionBinding.cs" />
+    <Compile Include="DbExpressions\DbExpressionKind.cs" />
+    <Compile Include="DbExpressions\DbExpressionList.cs" />
+    <Compile Include="Visitors\DbExpressionVisitor.cs" />
+    <Compile Include="Visitors\DbExpressionVisitorBase.cs" />
+    <Compile Include="DbExpressions\DbFunctionAggregate.cs" />
+    <Compile Include="Visitors\ExpressionConverterVisitor.cs" />
+    <Compile Include="DbExpressions\DbFilterExpression.cs" />
+    <Compile Include="DbExpressions\DbFunctionExpression.cs" />
+    <Compile Include="DbExpressions\DbGroupByExpression.cs" />
+    <Compile Include="DbExpressions\DbGroupExpressionBinding.cs" />
+    <Compile Include="DbExpressions\DbIntersectExpression.cs" />
+    <Compile Include="DbExpressions\DbIsEmptyExpression.cs" />
+    <Compile Include="DbExpressions\DbIsNullExpression.cs" />
+    <Compile Include="DbExpressions\DbIsOfExpression.cs" />
+    <Compile Include="DbExpressions\DbJoinExpression.cs" />
+    <Compile Include="DbExpressions\DbLikeExpression.cs" />
+    <Compile Include="DbExpressions\DbLimitExpression.cs" />
+    <Compile Include="DbExpressions\DbNewInstanceExpression.cs" />
+    <Compile Include="DbExpressions\DbNotExpression.cs" />
+    <Compile Include="DbExpressions\DbNullExpression.cs" />
+    <Compile Include="DbExpressions\DbOfTypeExpression.cs" />
+    <Compile Include="DbExpressions\DbOrExpression.cs" />
+    <Compile Include="DbExpressions\DbParameterReferenceExpression.cs" />
+    <Compile Include="DbExpressions\DbProjectExpression.cs" />
+    <Compile Include="DbExpressions\DbPropertyExpression.cs" />
+    <Compile Include="DbExpressions\DbQuantifierExpression.cs" />
+    <Compile Include="DbExpressions\DbRefExpression.cs" />
+    <Compile Include="DbExpressions\DbRefKeyExpression.cs" />
+    <Compile Include="DbExpressions\DbRelatedEntityRef.cs" />
+    <Compile Include="DbExpressions\DbRelationshipNavigationExpression.cs" />
+    <Compile Include="DbExpressions\DbScanExpression.cs" />
+    <Compile Include="DbExpressions\DbSetClause.cs" />
+    <Compile Include="DbExpressions\DbSkipExpression.cs" />
+    <Compile Include="DbExpressions\DbSortClause.cs" />
+    <Compile Include="DbExpressions\DbSortExpression.cs" />
+    <Compile Include="DbExpressions\DbTreatExpression.cs" />
+    <Compile Include="DbExpressions\DbUnaryExpression.cs" />
+    <Compile Include="DbExpressions\DbUnionAllExpression.cs" />
+    <Compile Include="DbExpressions\DbVariableReferenceExpression.cs" />
+    <Compile Include="Visitors\Rewriters\ConstantToParameterRewritter.cs" />
+    <Compile Include="Visitors\Replacers\VariableReferenceReplacer.cs" />
+    <Compile Include="Visitors\Rewriters\DecimalPropertyRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\FilterProjectRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\FlattenFilterRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\InvalidWhereExistsRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\LikeCRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\LikeRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\VariableReferenceRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\ExpressionRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\InListRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\MissingOrderByRewritter.cs" />
+    <Compile Include="Visitors\Rewriters\XmlToCursorJoinRewriter.cs" />
+    <Compile Include="Visitors\Rewriters\XmlToCursorMoveToInnerExpressionRewriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visitors\Rewriters\XmlToCursorRewritter.cs" />
+    <Compile Include="Visitors\Gatherers\DbConstantGatherer.cs" />
+    <Compile Include="Visitors\Gatherers\DbOrComparisonGatherer.cs" />
+    <Compile Include="Visitors\Gatherers\DbParameterGatherer.cs" />
+    <Compile Include="Visitors\Gatherers\DbPropertyGatherer.cs" />
+    <Compile Include="Visitors\Gatherers\DbScanGatherer.cs" />
+    <Compile Include="Visitors\Gatherers\VariableReferenceGatherer.cs" />
+    <Compile Include="Visitors\Gatherers\XmlToCursorExpressionGatherer.cs" />
+    <Compile Include="Visitors\Removers\RedundantDbCaseExpressionRemover.cs" />
+    <Compile Include="Visitors\Removers\XmlToCursorExpressionRemover.cs" />
+    <Compile Include="Visitors\SqlFormatter.cs" />
+    <Compile Include="DbExpressionExtensions.cs" />
+    <Compile Include="EdmFunctionExtensions.cs" />
+    <Compile Include="EdmTypeExtensions.cs" />
+    <Compile Include="Visitors\Rewriters\SingleRowTableRewritter.cs" />
+    <Compile Include="FacetInfo.cs" />
+    <Compile Include="MetadataItemExtensions.cs" />
+    <Compile Include="VfpParameterHelper.cs" />
+    <Compile Include="PrimitiveTypeKindExtensions.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Schema\CheckConstraintSchema.cs" />
+    <Compile Include="Schema\ConstraintTypes.cs" />
+    <Compile Include="Schema\ViewConstraintSchema.Columns.cs" />
+    <Compile Include="Schema\TableConstraintSchema.Columns.cs" />
+    <Compile Include="Schema\ProcedureParameterSchema.Columns.cs" />
+    <Compile Include="Schema\ProcedureSchema.Columns.cs" />
+    <Compile Include="Schema\ISchema.cs" />
+    <Compile Include="Schema\SchemaNames.cs" />
+    <Compile Include="Schema\ViewConstraintColumnsSchema.cs" />
+    <Compile Include="Schema\TableConstraintColumnsSchema.cs" />
+    <Compile Include="Schema\TableOrViewConstraintColumnBase.cs" />
+    <Compile Include="Schema\TableForeignKeyConstraintsSchema.cs" />
+    <Compile Include="Schema\TableOrViewForeignKeyConstraintsBase.cs" />
+    <Compile Include="Schema\ViewForeignKeySchema.cs" />
+    <Compile Include="Schema\TableForeignKeySchema.cs" />
+    <Compile Include="Schema\TableOrViewForeignKeyBase.cs" />
+    <Compile Include="Schema\ProcedureParameterSchema.cs" />
+    <Compile Include="Schema\ProcedureSchema.cs" />
+    <Compile Include="Schema\FunctionParameterSchema.cs" />
+    <Compile Include="Schema\FunctionSchema.cs" />
+    <Compile Include="Schema\ViewConstraintSchema.cs" />
+    <Compile Include="Schema\TableConstraintSchema.cs" />
+    <Compile Include="Schema\TableOrViewBase.cs" />
+    <Compile Include="Schema\SchemaBase.cs" />
+    <Compile Include="Schema\SchemaManager.cs" />
+    <Compile Include="Schema\TableColumnSchema.cs" />
+    <Compile Include="Schema\TableOrViewColumnBase.cs" />
+    <Compile Include="Schema\TableSchema.cs" />
+    <Compile Include="Schema\ViewColumnSchema.cs" />
+    <Compile Include="Schema\ViewSchema.cs" />
+    <Compile Include="SqlGeneration\BinaryFragment.cs" />
+    <Compile Include="SqlGeneration\ISqlFragment.cs" />
+    <Compile Include="SqlGeneration\JoinSymbol.cs" />
+    <Compile Include="SqlGeneration\SqlBuilder.cs" />
+    <Compile Include="SqlGeneration\SqlFragmentBase.cs" />
+    <Compile Include="SqlGeneration\SqlFragmentType.cs" />
+    <Compile Include="SqlGeneration\SqlFragmentVisitorBase.cs" />
+    <Compile Include="SqlGeneration\SqlGenerator.cs" />
+    <Compile Include="SqlGeneration\SqlSelectStatement.cs" />
+    <Compile Include="SqlGeneration\SqlVisitor.cs" />
+    <Compile Include="SqlGeneration\SqlWriter.cs" />
+    <Compile Include="SqlGeneration\Symbol.cs" />
+    <Compile Include="SqlGeneration\SymbolPair.cs" />
+    <Compile Include="SqlGeneration\SymbolTable.cs" />
+    <Compile Include="SqlGeneration\TopClause.cs" />
+    <Compile Include="TypeUsageExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VfpOleDb\VfpCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VfpProviderFactory.cs" />
+    <Compile Include="VfpProviderManifest.cs" />
+    <Compile Include="VfpProviderServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resources\VfpEntityFrameworkProvider.snk">
+      <Link>VfpEntityFrameworkProvider.snk</Link>
+    </None>
+    <None Include="Resources\Blank.dbc" />
+    <None Include="Resources\Blank.dct" />
+    <None Include="Resources\Blank.dcx" />
+    <None Include="Resources\ProviderManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StoreSchemaDefinition.ssdl.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StoreSchemaMapping.msl.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StoreSchemaDefinitionVersion3.ssdl.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StoreSchemaMappingVersion3.msl.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rem "%25ProgramFiles(x86)%25\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil" -i "$(TargetDir)$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
