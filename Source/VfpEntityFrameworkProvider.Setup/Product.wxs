@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define ProductName="Visual FoxPro Entity Framework Provider" ?>
+  <?define ProductCode="{E1149D30-C49F-4795-983C-79E56D4FC2B7}"?>
+  <?define UpgradeCode="{03052E74-478C-4E27-9C82-8AA181BC4E66}"?>
+  <?define Manufacturer="Tom Brothers"?>
+  <?define Description="Entity Framework Provider for Visual FoxPro Data"?>
+  
+  <!-- Product.Id = ProductCode -->
+  <!-- UpgradeCode should stay the same -->
+  <Product Id="$(var.ProductCode)"
+           Name="$(var.ProductName)"
+           Language="1033"
+           Version="!(bind.FileVersion.FILE_VfpEntityFrameworkProviderDll)"
+           Manufacturer="$(var.Manufacturer)"
+           UpgradeCode="$(var.UpgradeCode)">
+    <Package InstallerVersion="200"
+             Compressed="yes"
+             InstallPrivileges="elevated"
+             Manufacturer="$(var.Manufacturer)"
+             Description="$(var.Description)" />
+
+    <Media Id="1"
+           Cabinet="media1.cab"
+           EmbedCab="yes" />
+
+    <PropertyRef Id="LaunchConditionsFile" />
+    <PropertyRef Id="UIFile" />
+    <PropertyRef Id="PropertiesFile" />
+    <PropertyRef Id="FilesFile" />
+
+    <Directory Id="TARGETDIR"
+               Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLDIR"
+                   Name="$(var.ProductName)">
+          <Merge Id="MM_VfpOleDb"
+                 SourceFile="Resources\vfpoledb.msm"
+                 Language="1033"
+                 DiskId="1" />
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature"
+             Title="$(var.Description)"
+             Level="1">
+      <ComponentGroupRef Id="CMP_VfpEntityFrameworkProviderFiles" />
+      <ComponentGroupRef Id="CMP_VfpEntityFrameworkProviderRegistry" />
+      <ComponentRef Id="CMP_MachineConfig_Net4"/>
+      <MergeRef Id="MM_VfpOleDb" />
+    </Feature>
+  </Product>
+</Wix>
